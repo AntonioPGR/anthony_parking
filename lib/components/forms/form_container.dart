@@ -39,7 +39,7 @@ class FormContainer extends StatelessWidget{
     return FormBuilder(
       key: form_key,
       child: Column(
-        children: inputs,
+        children: renderInputs(),
       ),
     );
   }
