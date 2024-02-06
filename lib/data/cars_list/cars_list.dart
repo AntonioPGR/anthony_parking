@@ -1,7 +1,6 @@
-import 'package:anthony_parking/data/box/boxes.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:anthony_parking/models/car_model.dart';
-import 'box_handler.dart';
+import "package:flutter/cupertino.dart";
+import "package:anthony_parking/models/car_model.dart";
+import "box_handler.dart";
 
 class StateCarList extends ChangeNotifier{
 

@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
 
 class WidgetColumn extends StatelessWidget{
-  List<Widget> widgets;
-  double gap_size;
+  final List<Widget> widgets;
+  final double gap_size;
   WidgetColumn({
     required this.widgets,
     this.gap_size = 16,

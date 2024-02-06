@@ -1,11 +1,10 @@
-import 'package:anthony_parking/assets/themes/theme_colors.dart';
-import 'package:anthony_parking/data/current_car/current_selected_car.dart';
-import 'package:anthony_parking/models/car_model.dart';
-import 'package:anthony_parking/pages/home/index.dart';
-import 'package:anthony_parking/tools/page_navigator.dart';
-import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
+import "package:anthony_parking/assets/themes/theme_colors.dart";
+import "package:anthony_parking/data/current_car/current_selected_car.dart";
+import "package:anthony_parking/models/car_model.dart";
+import "package:anthony_parking/tools/page_navigator.dart";
+import "package:flutter/material.dart";
+import "package:intl/intl.dart";
+import "package:provider/provider.dart";
 
 Text _dataRowText(String label) => Text(label);
 

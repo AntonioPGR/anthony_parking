@@ -1,12 +1,12 @@
-import 'package:anthony_parking/components/containers/widget_row.dart';
-import 'package:anthony_parking/components/forms/form_container.dart';
-import 'package:anthony_parking/components/forms/form_input.dart';
-import 'package:anthony_parking/controllers/car_controller.dart';
-import 'package:anthony_parking/pages/car_entry/entry_form/form_handlers/entry_validators.dart';
-import 'package:anthony_parking/validators/car_validator/plate_formatter.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:gap/gap.dart';
+import "package:anthony_parking/components/containers/widget_row.dart";
+import "package:anthony_parking/components/forms/form_container.dart";
+import "package:anthony_parking/components/forms/form_input.dart";
+import "package:anthony_parking/controllers/car_controller.dart";
+import "package:anthony_parking/pages/car_entry/entry_form/form_handlers/entry_validators.dart";
+import "package:anthony_parking/validators/car_validator/plate_formatter.dart";
+import "package:flutter/material.dart";
+import "package:flutter_form_builder/flutter_form_builder.dart";
+
 
 class EntryInputs extends StatelessWidget {
   final CarControllers controllers;

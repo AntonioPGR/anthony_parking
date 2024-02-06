@@ -1,7 +1,7 @@
-import 'package:anthony_parking/models/car_model.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:intl/intl.dart';
-import 'package:uuid/uuid.dart';
+import "package:anthony_parking/models/car_model.dart";
+import "package:flutter/cupertino.dart";
+import "package:intl/intl.dart";
+import "package:uuid/uuid.dart";
 
 class CarControllers{
   CarModel? current_model;
@@ -14,7 +14,7 @@ class CarControllers{
   String photo_path = "";
 
   CarModel create(){
-    Uuid uuid_generator = Uuid();
+    Uuid uuid_generator = const Uuid();
     return CarModel(
       plate: plate.text,
       model: model.text,
@@ -38,6 +38,7 @@ class CarControllers{
         photo: photo_path
       );
     }
+    return null;
   }
 
   void updateValues(CarModel current_car) {

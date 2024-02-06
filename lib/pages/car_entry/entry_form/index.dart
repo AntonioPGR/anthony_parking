@@ -1,18 +1,18 @@
-import 'package:anthony_parking/components/ImageLoader/index.dart';
-import 'package:anthony_parking/components/forms/buttons/Button.dart';
-import 'package:anthony_parking/components/forms/default_form_layout.dart';
-import 'package:anthony_parking/components/layouts/two_sides_layout.dart';
-import 'package:anthony_parking/components/snackbar/snackbar.dart';
-import 'package:anthony_parking/controllers/car_controller.dart';
-import 'package:anthony_parking/data/cars_list/cars_list.dart';
-import 'package:anthony_parking/pages/car_entry/entry_form/entry_inputs.dart';
-import 'package:anthony_parking/tools/image_text_recognizer.dart';
-import 'package:anthony_parking/tools/page_navigator.dart';
-import 'package:anthony_parking/validators/car_validator/plate_validator.dart';
-import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:provider/provider.dart';
+import "package:anthony_parking/components/ImageLoader/index.dart";
+import "package:anthony_parking/components/forms/default_form_layout.dart";
+import "package:anthony_parking/components/layouts/two_sides_layout.dart";
+import "package:anthony_parking/components/snackbar/snackbar.dart";
+import "package:anthony_parking/controllers/car_controller.dart";
+import "package:anthony_parking/data/cars_list/cars_list.dart";
+import "package:anthony_parking/pages/car_entry/entry_form/entry_inputs.dart";
+import "package:anthony_parking/tools/image_text_recognizer.dart";
+import "package:anthony_parking/tools/page_navigator.dart";
+import "package:anthony_parking/validators/car_validator/plate_validator.dart";
+import "package:camera/camera.dart";
+import "package:flutter/material.dart";
+import "package:flutter_form_builder/flutter_form_builder.dart";
+import "package:provider/provider.dart";
+
 
 class EntryForm extends StatelessWidget {
   EntryForm({super.key});

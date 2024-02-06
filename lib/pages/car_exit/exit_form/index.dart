@@ -1,23 +1,21 @@
-import 'package:anthony_parking/components/ImageLoader/index.dart';
-import 'package:anthony_parking/components/forms/buttons/Button.dart';
-import 'package:anthony_parking/components/forms/default_form_layout.dart';
-import 'package:anthony_parking/components/layouts/two_sides_layout.dart';
-import 'package:anthony_parking/components/snackbar/snackbar.dart';
-import 'package:anthony_parking/components/titles/page_title.dart';
-import 'package:anthony_parking/controllers/car_controller.dart';
-import 'package:anthony_parking/data/cars_list/cars_list.dart';
-import 'package:anthony_parking/data/current_car/current_selected_car.dart';
-import 'package:anthony_parking/models/car_model.dart';
-import 'package:anthony_parking/pages/car_exit/exit_form/price_displayer.dart';
-import 'package:anthony_parking/tools/page_navigator.dart';
-import 'package:anthony_parking/tools/price_calculator.dart';
-import 'package:anthony_parking/validators/base_validator_methods.dart';
-import 'package:anthony_parking/validators/car_validator/plate_validator.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:provider/provider.dart';
-import 'exit_inputs.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import "package:anthony_parking/components/ImageLoader/index.dart";
+import "package:anthony_parking/components/forms/buttons/Button.dart";
+import "package:anthony_parking/components/layouts/two_sides_layout.dart";
+import "package:anthony_parking/components/snackbar/snackbar.dart";
+import "package:anthony_parking/components/titles/page_title.dart";
+import "package:anthony_parking/controllers/car_controller.dart";
+import "package:anthony_parking/data/cars_list/cars_list.dart";
+import "package:anthony_parking/data/current_car/current_selected_car.dart";
+import "package:anthony_parking/models/car_model.dart";
+import "package:anthony_parking/pages/car_exit/exit_form/price_displayer.dart";
+import "package:anthony_parking/tools/page_navigator.dart";
+import "package:anthony_parking/tools/price_calculator.dart";
+import "package:anthony_parking/validators/base_validator_methods.dart";
+import "package:anthony_parking/validators/car_validator/plate_validator.dart";
+import "package:flutter/cupertino.dart";
+import "package:flutter_form_builder/flutter_form_builder.dart";
+import "package:provider/provider.dart";
+import "exit_inputs.dart";
 
 
 class ExitForm extends StatefulWidget {

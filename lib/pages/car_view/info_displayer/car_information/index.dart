@@ -1,10 +1,9 @@
-import 'package:anthony_parking/components/containers/widget_column.dart';
-import 'package:anthony_parking/components/containers/widget_row.dart';
-import 'package:anthony_parking/models/car_model.dart';
-import 'package:anthony_parking/pages/car_view/info_displayer/car_information/info_container.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:gap/gap.dart';
-import 'package:intl/intl.dart';
+import "package:anthony_parking/components/containers/widget_column.dart";
+import "package:anthony_parking/components/containers/widget_row.dart";
+import "package:anthony_parking/models/car_model.dart";
+import "package:anthony_parking/pages/car_view/info_displayer/car_information/info_container.dart";
+import "package:flutter/cupertino.dart";
+import "package:intl/intl.dart";
 
 class CarInformation extends StatelessWidget{
   CarModel current_car;

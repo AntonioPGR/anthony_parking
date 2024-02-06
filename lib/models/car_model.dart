@@ -1,5 +1,4 @@
-import 'package:hive_flutter/adapters.dart';
-import 'package:uuid/uuid.dart';
+import "package:hive_flutter/adapters.dart";
 
 part "car_model.g.dart";
 

@@ -1,6 +1,4 @@
-import 'dart:ffi';
-
-import 'package:anthony_parking/models/car_model.dart';
+import "package:anthony_parking/models/car_model.dart";
 
 class PriceCalculator{
 

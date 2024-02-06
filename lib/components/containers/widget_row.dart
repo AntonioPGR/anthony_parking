@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:gap/gap.dart';
+import "package:flutter/cupertino.dart";
+import "package:gap/gap.dart";
 
 class WidgetRow extends StatelessWidget{
   List<Widget> widgets;
