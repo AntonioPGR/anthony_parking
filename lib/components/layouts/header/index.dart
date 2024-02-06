@@ -1,6 +1,5 @@
-import 'package:anthony_parking/assets/themes/theme_colors.dart';
-import 'package:anthony_parking/components/Header/clock.dart';
-import 'package:anthony_parking/components/header/header_title.dart';
+import 'package:anthony_parking/components/layouts/header/clock.dart';
+import 'package:anthony_parking/components/layouts/header/header_title.dart';
 import 'package:flutter/material.dart';
 
 

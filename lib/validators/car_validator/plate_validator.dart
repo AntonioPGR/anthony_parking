@@ -16,4 +16,18 @@ class PlateValidator{
     return validate(value) != null? false : true;
   }
 
+  static String tryToFormat(String plate) {
+    plate = plate.replaceAll(" ", "");
+    plate = plate.replaceAll("-", "");
+    print(plate);
+    if(isValid(plate)){
+      return plate;
+    }
+    if(BaseValidator.matchesRegex(plate, "^([A-Z]{3}[0-9]{1}[0-9A-Z]{1}[0-9]{2})\$")){
+      String new_plate = "${plate.substring(0, 3)}-${plate.substring(3, plate.length)}";
+      return new_plate;
+    }
+    throw Exception("A string detectada não é valida!");
+  }
+
 }

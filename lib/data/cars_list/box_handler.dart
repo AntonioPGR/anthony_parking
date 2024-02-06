@@ -9,17 +9,17 @@ class CarListBoxHandler implements BoxHandler<String, CarModel>{
 
   @override
   add(CarModel model) {
-    cars_box.put(model.uuid!, model);
+    box.put(model.uuid!, model);
   }
 
   @override
   delete(uuid) {
-    cars_box.delete(uuid);
+    box.delete(uuid);
   }
 
   @override
   getAll() {
-    int cars_number = cars_box.length;
+    int cars_number = box.length;
     List<CarModel>  new_cars_list = [];
     for(int i = 0; i < cars_number; i++){
       CarModel? add_car = cars_box.getAt(i);
@@ -32,12 +32,12 @@ class CarListBoxHandler implements BoxHandler<String, CarModel>{
 
   @override
   update(uuid, model) {
-
+    box.put(uuid, model);
   }
 
   @override
   CarModel? getUniqueById(String key) {
-    return cars_box.get(key);
+    return box.get(key);
   }
 
 }

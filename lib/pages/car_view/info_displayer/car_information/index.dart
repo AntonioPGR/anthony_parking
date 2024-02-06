@@ -1,7 +1,10 @@
-import 'package:anthony_parking/assets/themes/theme_colors.dart';
-import 'package:anthony_parking/components/inputs/input_row.dart';
+import 'package:anthony_parking/components/containers/widget_column.dart';
+import 'package:anthony_parking/components/containers/widget_row.dart';
 import 'package:anthony_parking/models/car_model.dart';
+import 'package:anthony_parking/pages/car_view/info_displayer/car_information/info_container.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:gap/gap.dart';
+import 'package:intl/intl.dart';
 
 class CarInformation extends StatelessWidget{
   CarModel current_car;
@@ -12,20 +15,40 @@ class CarInformation extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    return WidgetColumn(
+      gap_size: 16,
+      widgets: [
         WidgetRow(
-          first_input: ColoredBox(
-            color: ThemeColors.brown,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(current_car.plate),
+          widgets: [
+            InfoContainer(
+              text: current_car.plate,
+              label: "Placa",
             ),
-          ),
-          last_input: ColoredBox(
-            color: ThemeColors.brown,
-            child: Text(current_car.plate),
-          )
+            InfoContainer(
+              text: current_car.color ?? "",
+              label: "Cor",
+            ),
+          ]
+        ),
+        WidgetRow(
+          widgets: [
+            InfoContainer(
+              text: current_car.model ?? "",
+              label: "Modelo",
+            ),
+            InfoContainer(
+              text: DateFormat("dd/MM HH:mm:ss").format(current_car.entry_time).toString(),
+              label: "Entrada",
+            ),
+          ]
+        ),
+        WidgetRow(
+          widgets: [
+            InfoContainer(
+              text: current_car.secret ?? "",
+              label: "segredo"
+            )
+          ],
         )
       ],
     );

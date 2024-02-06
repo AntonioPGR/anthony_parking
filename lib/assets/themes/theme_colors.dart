@@ -13,5 +13,6 @@ class ThemeColors {
   static const yellow = Color.fromRGBO(255, 191, 0, 1);
   static const blue = Color.fromRGBO(15, 82, 186, 1);
   static const gray = Color.fromRGBO(150, 150, 150, 1);
+  static const black = Color.fromRGBO(26, 26, 26, 1);
 }
 

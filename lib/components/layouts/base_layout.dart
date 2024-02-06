@@ -1,6 +1,6 @@
 import 'package:anthony_parking/assets/themes/theme_colors.dart';
-import 'package:anthony_parking/components/drawer/nav_drawer.dart';
-import 'package:anthony_parking/components/header/index.dart';
+import 'package:anthony_parking/components/layouts/drawer/nav_drawer.dart';
+import 'package:anthony_parking/components/layouts/header/index.dart';
 import 'package:flutter/material.dart';
 
 class BaseLayout extends StatelessWidget{

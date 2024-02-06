@@ -40,7 +40,7 @@ DataRow createCarRow(BuildContext context, CarModel car, int? rowIndex){
           ),
           onPressed: (){
             current_car_state.setCurrentCar(car);
-            PageNavigator.goHome(context);
+            PageNavigator.goView(context);
           },
         )
       ),
