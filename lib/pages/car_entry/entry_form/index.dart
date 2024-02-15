@@ -1,11 +1,9 @@
-import "package:anthony_parking/assets/themes/theme_colors.dart";
-import "package:anthony_parking/components/ImageLoader/index.dart";
-import "package:anthony_parking/components/custom_widgets/custom_full_expanded.dart";
-import "package:anthony_parking/components/forms/default_form_layout.dart";
-import 'package:anthony_parking/layouts/two_sides_layout.dart';
+import "package:anthony_parking/components/buttons/Button.dart";
 import "package:anthony_parking/components/snackbar/snackbar.dart";
+import "package:anthony_parking/components/titles/page_title.dart";
 import "package:anthony_parking/controllers/car_controller.dart";
 import "package:anthony_parking/data/cars_list/cars_list.dart";
+import "package:anthony_parking/layouts/camera_form_layout.dart";
 import "package:anthony_parking/models/car_model.dart";
 import "package:anthony_parking/pages/car_entry/entry_form/entry_inputs.dart";
 import "package:anthony_parking/tools/image_text_recognizer.dart";
@@ -14,7 +12,6 @@ import "package:anthony_parking/validators/car_validator/plate_validator.dart";
 import "package:camera/camera.dart";
 import "package:flutter/material.dart";
 import "package:flutter_form_builder/flutter_form_builder.dart";
-import "package:gap/gap.dart";
 import "package:provider/provider.dart";
 
 class EntryForm extends StatelessWidget {
@@ -47,6 +44,7 @@ class EntryForm extends StatelessWidget {
         String new_plate = PlateValidator.tryToFormat(recognized_text ?? "");
         controllers.plate.text = new_plate;
       } catch (e) {
+        // ignore: use_build_context_synchronously
         messageSnackBar(context, "Não foi possivel reconhecer nenhuma placa automotiva na imagem!");
       }
     }
@@ -56,12 +54,20 @@ class EntryForm extends StatelessWidget {
   Widget build(BuildContext context) {
     car_list_state = Provider.of<StateCarsList>(context);
 
-    return Row(
+    return CameraFormLayout(
+      allow_image_change: true,
       children: [
-        SizedBox(width: 300,child:ColoredBox(color: ThemeColors.beige,)),
-        Gap(48),
-        Expanded(child: ColoredBox(color: ThemeColors.beige,))
-      ],
+        const PageTitle("Entrada de veículos"),
+        EntryInputs(
+          form_key: form_key,
+          controllers: controllers
+        ),
+        Button(
+          width: MediaQuery.of(context).size.width * 0.4,
+          label: "Confirmar entrada", 
+          on_press: () => onSubmit(context)
+        )
+      ], 
     );
   }
 }

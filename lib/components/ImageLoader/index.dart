@@ -17,8 +17,6 @@ class ImageLoader extends StatefulWidget {
     this.onImageChange,
   });
 
-  get initial_path => initial_image_path;
-
   @override
   State<ImageLoader> createState() => _ImageLoaderState();
 }
@@ -26,6 +24,36 @@ class ImageLoader extends StatefulWidget {
 class _ImageLoaderState extends State<ImageLoader> {
   XFile? image;
   final PhotoPicker photo_picker = PhotoPicker();
+
+  renderImage() {
+    if (image != null) {
+      return Image.file(File(image!.path));
+    }
+    return Image.asset("./lib/assets/images/no_image_available.png");
+  }
+
+  setImage(XFile? new_image) {
+    image = new_image;
+    if (widget.onImageChange != null) {
+      widget.onImageChange!(new_image);
+    }
+    setState(() {});
+  }
+
+  void pickFromCamera() async {
+    XFile? new_image = await photo_picker.pickFromCamera();
+    setImage(new_image);
+  }
+
+  void pickFromGallery() async {
+    XFile? new_image = await photo_picker.pickFromGallery();
+    setImage(new_image);
+  }
+
+  void clean() async {
+    XFile? new_image = null;
+    setImage(new_image);
+  } 
 
   @override
   Widget build(BuildContext context) {
@@ -49,42 +77,35 @@ class _ImageLoaderState extends State<ImageLoader> {
       Expanded(child: renderImage()),
     ];
     if (widget.allow_image_change == true) {
-      widgets.add(CustomRow(children: [
-        Button(
-            label: "Galeria",
-            on_press: () async {
-              XFile? new_image = await photo_picker.pickFromGallery();
-              setImage(new_image);
-            }),
-        Button(
-            label: "Camera",
-            on_press: () async {
-              XFile? new_image = await photo_picker.pickFromCamera();
-              setImage(new_image);
-            }),
-        Button(
-            label: "Limpar",
-            on_press: () async {
-              XFile? new_image = null;
-              setImage(new_image);
-            }),
-      ]));
+      widgets.add(
+        CustomColumn(
+          gap_size: 16,
+          children: [
+            CustomRow(
+              gap_size: 8,
+              children: [
+                Expanded(
+                  child: Button(
+                    label: "Galeria",
+                    on_press: pickFromGallery
+                  )
+                ),
+                Expanded(
+                  child: Button(
+                    label: "Camera",
+                    on_press: pickFromCamera
+                  )
+                )
+              ]
+            ),
+            Button(
+              label: "Limpar",
+              on_press: clean
+            ),
+          ]
+        )
+      );
     }
     return widgets;
-  }
-
-  renderImage() {
-    if (image != null) {
-      return Image.file(File(image!.path));
-    }
-    return Image.asset("./lib/assets/images/no_image_available.png");
-  }
-
-  setImage(XFile? new_image) {
-    image = new_image;
-    if (widget.onImageChange != null) {
-      widget.onImageChange!(new_image);
-    }
-    setState(() {});
   }
 }
