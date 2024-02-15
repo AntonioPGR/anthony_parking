@@ -17,7 +17,7 @@ class CarModel{
   @HiveField(5)
   String? photo;
   @HiveField(6)
-  String? uuid;
+  String uuid;
 
   CarModel({
     required this.plate,

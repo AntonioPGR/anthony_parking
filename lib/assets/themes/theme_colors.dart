@@ -1,5 +1,6 @@
-
 import 'dart:ui';
+
+import "package:flutter/material.dart";
 
 class ThemeColors {
   static const off_white = Color.fromRGBO(242, 226, 206, 1);
@@ -14,5 +15,8 @@ class ThemeColors {
   static const blue = Color.fromRGBO(15, 82, 186, 1);
   static const gray = Color.fromRGBO(150, 150, 150, 1);
   static const black = Color.fromRGBO(26, 26, 26, 1);
-}
 
+  static MaterialStateProperty<Color> toMaterialFormat(Color color) {
+    return MaterialStateProperty.all<Color>(color);
+  }
+}

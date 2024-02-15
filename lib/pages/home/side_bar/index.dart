@@ -1,3 +1,4 @@
+import 'package:anthony_parking/components/custom_widgets/custom_column.dart';
 import 'package:anthony_parking/pages/home/side_bar/action_buttons.dart';
 import 'package:anthony_parking/pages/home/side_bar/cars_counter.dart';
 import 'package:flutter/material.dart';
@@ -7,14 +8,13 @@ class SideBar extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(
       width: 200,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      child: CustomColumn(
+        main_alignment: MainAxisAlignment.spaceAround,
         children: [
           CarsCounter(),
-          ActionButtons()
+          const ActionButtons()
         ],
       ),
     );

@@ -3,24 +3,26 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class StateCarsLimit extends ChangeNotifier{
 
-  late int _cars_limit;
+  int _cars_limit = 30;
   final SharedPreferences instance;
   final String key = "cars_limit_key";
 
   StateCarsLimit({required this.instance}){
-    _loadCarsLimit();
+    _load();
   }
 
-  void _loadCarsLimit(){
-    _cars_limit = instance.getInt(key) ?? 30;
+  void _load(){
+    _cars_limit = instance.getInt(key) ?? _cars_limit;
   }
 
-  int getCarsLimit(){
+  int get(){
     return _cars_limit;
   }
 
-  void setCarsLimit(int new_limit){
-    instance.setInt(key, new_limit);
+  void set(int item){
+    instance.setInt(key, item);
+    _load();
+    notifyListeners();
   }
 
 }

@@ -1,6 +1,7 @@
 import 'package:anthony_parking/assets/themes/theme_colors.dart';
-import 'package:anthony_parking/components/layouts/drawer/nav_drawer.dart';
-import 'package:anthony_parking/components/layouts/header/index.dart';
+import 'package:anthony_parking/components/custom_widgets/custom_full_expanded.dart';
+import 'package:anthony_parking/components/drawer/nav_drawer.dart';
+import 'package:anthony_parking/components/header/index.dart';
 import 'package:flutter/material.dart';
 
 class BaseLayout extends StatelessWidget{
@@ -16,12 +17,12 @@ class BaseLayout extends StatelessWidget{
       resizeToAvoidBottomInset: false,
       appBar: const Header(),
       drawer: const NavDrawer(),
-      body: ColoredBox(
-          color: ThemeColors.off_white,
-          child:  Padding(
-            padding: const EdgeInsets.all(16),
-            child: child
-          )
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        color: ThemeColors.off_white,
+        child: CustomFullExpanded(
+          child: child
+        )
       ),
     );
   }

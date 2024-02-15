@@ -5,33 +5,6 @@ ThemeData light_theme = ThemeData(
   brightness: Brightness.light,
   useMaterial3: true,
 
-  // TEXTS
-  textTheme: const TextTheme(
-    titleLarge: TextStyle(
-      fontSize: 46,
-      fontWeight: FontWeight.w700
-    ),
-    titleMedium: TextStyle(
-      fontSize: 36,
-      fontWeight: FontWeight.w600
-    ),
-    titleSmall: TextStyle(
-      fontSize: 26,
-      fontWeight: FontWeight.w600
-    ),
-    displayMedium: TextStyle(
-      fontSize: 28
-    ),
-    bodyMedium: TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.normal
-    ),
-    bodySmall: TextStyle(
-      fontSize: 18,
-      fontWeight: FontWeight.normal
-    ),
-  ),
-
   // APPBAR
   appBarTheme: const AppBarTheme(
     color: ThemeColors.dark_brown,

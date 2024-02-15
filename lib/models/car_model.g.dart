@@ -23,7 +23,7 @@ class CarModelAdapter extends TypeAdapter<CarModel> {
       secret: fields[3] as String?,
       photo: fields[5] as String?,
       color: fields[4] as String?,
-      uuid: fields[6] as String?,
+      uuid: fields[6] as String,
     );
   }
 

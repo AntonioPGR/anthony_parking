@@ -2,6 +2,7 @@ import 'package:anthony_parking/pages/car_entry/index.dart';
 import 'package:anthony_parking/pages/car_exit/index.dart';
 import 'package:anthony_parking/pages/car_update/index.dart';
 import 'package:anthony_parking/pages/car_view/index.dart';
+import "package:anthony_parking/pages/configs/index.dart";
 import 'package:anthony_parking/pages/home/index.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class PageNavigator{
   }
 
   static goConfigurations(BuildContext context) {
-    PageNavigator.goTo(context: context, page: const HomePage());
+    PageNavigator.goTo(context: context, page: ConfigsPage());
   }
 
   static void goView(BuildContext context) {

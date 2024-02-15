@@ -1,4 +1,4 @@
-import 'package:anthony_parking/components/forms/buttons/Button.dart';
+import 'package:anthony_parking/components/buttons/Button.dart';
 import 'package:anthony_parking/components/titles/page_title.dart';
 import 'package:flutter/cupertino.dart';
 

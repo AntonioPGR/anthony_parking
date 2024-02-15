@@ -1,5 +1,5 @@
 import 'package:anthony_parking/assets/themes/theme_colors.dart';
-import 'package:anthony_parking/components/forms/buttons/Button.dart';
+import 'package:anthony_parking/components/buttons/Button.dart';
 import 'package:anthony_parking/tools/page_navigator.dart';
 import 'package:flutter/cupertino.dart';
 

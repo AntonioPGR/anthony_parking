@@ -1,6 +1,6 @@
 import "package:anthony_parking/components/ImageLoader/index.dart";
-import "package:anthony_parking/components/forms/buttons/Button.dart";
-import "package:anthony_parking/components/layouts/two_sides_layout.dart";
+import 'package:anthony_parking/components/buttons/Button.dart';
+import 'package:anthony_parking/layouts/two_sides_layout.dart';
 import "package:anthony_parking/components/snackbar/snackbar.dart";
 import "package:anthony_parking/components/titles/page_title.dart";
 import "package:anthony_parking/controllers/car_controller.dart";
@@ -17,7 +17,6 @@ import "package:flutter_form_builder/flutter_form_builder.dart";
 import "package:provider/provider.dart";
 import "exit_inputs.dart";
 
-
 class ExitForm extends StatefulWidget {
   const ExitForm({super.key});
 
@@ -29,34 +28,36 @@ class _ExitFormState extends State<ExitForm> {
   final _form_key = GlobalKey<FormBuilderState>();
   final controllers = CarControllers();
   final PriceCalculator price_calculator = PriceCalculator();
-  late StateCarList cars_list_state;
+  late StateCarsList cars_list_state;
   late StateCurrentCar current_car_state;
   CarModel? current_car = null;
 
-  void assignModelToControllers(){
-    !BaseValidator.isNull(current_car)? controllers.updateValues(current_car!) : controllers.cleanExceptPlate();
+  void assignModelToControllers() {
+    !BaseValidator.isNull(current_car)
+        ? controllers.updateValues(current_car!)
+        : controllers.cleanExceptPlate();
   }
 
-  double getPrice(){
-    if(!BaseValidator.isNull(current_car)){
+  double getPrice() {
+    if (!BaseValidator.isNull(current_car)) {
       return price_calculator.calculateCarPrice(current_car!);
     }
     return 0;
   }
 
-  onPlateChange(String? new_plate){
+  onPlateChange(String? new_plate) {
     CarModel? car = cars_list_state.getCarByPlate(new_plate ?? "");
-    if(!PlateValidator.isValid(new_plate) || BaseValidator.isNull(car)) {
-      current_car_state.clearCurrentCar();
+    if (!PlateValidator.isValid(new_plate) || BaseValidator.isNull(car)) {
+      current_car_state.clear();
       return;
     }
-    current_car_state.setCurrentCar(car!);
+    current_car_state.set(car!);
   }
 
-  onSubmit(BuildContext context){
-    if(!BaseValidator.isNull(current_car)){
-      cars_list_state.deleteCarById(current_car!.uuid!);
-      current_car_state.clearCurrentCar();
+  onSubmit(BuildContext context) {
+    if (!BaseValidator.isNull(current_car)) {
+      cars_list_state.delete(current_car!.uuid);
+      current_car_state.clear();
       messageSnackBar(context, "Carro removido com sucesso");
       PageNavigator.goHome(context);
     }
@@ -64,9 +65,9 @@ class _ExitFormState extends State<ExitForm> {
 
   @override
   Widget build(BuildContext context) {
-    cars_list_state = Provider.of<StateCarList>(context);
+    cars_list_state = Provider.of<StateCarsList>(context);
     current_car_state = Provider.of<StateCurrentCar>(context);
-    current_car = current_car_state.getCurrentCar();
+    current_car = current_car_state.get();
     assignModelToControllers();
 
     return TwoSidesLayout(
@@ -85,15 +86,10 @@ class _ExitFormState extends State<ExitForm> {
               form_key: _form_key,
               on_plate_change: onPlateChange,
             ),
-            Button(
-              label: "Confirmar saída",
-              on_press: () => onSubmit(context)
-            )
+            Button(label: "Confirmar saída", on_press: () => onSubmit(context))
           ],
         ),
       ),
     );
   }
 }
-
-

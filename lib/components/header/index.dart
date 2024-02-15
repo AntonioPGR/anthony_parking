@@ -1,5 +1,5 @@
-import 'package:anthony_parking/components/layouts/header/clock.dart';
-import 'package:anthony_parking/components/layouts/header/header_title.dart';
+import 'package:anthony_parking/components/header/clock.dart';
+import 'package:anthony_parking/components/header/header_title.dart';
 import 'package:flutter/material.dart';
 
 
@@ -9,7 +9,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leadingWidth: 80,
+      toolbarHeight: 120,
       leading: Builder(
         builder: (context) => IconButton(
           onPressed: () => Scaffold.of(context).openDrawer(),
@@ -19,8 +19,9 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
           )
         ),
       ),
-      title: const HeaderTitle(),
-      actions: const [
+      title: HeaderTitle(),
+      centerTitle: true,
+      actions: [
         ClockWidget()
       ],
     );

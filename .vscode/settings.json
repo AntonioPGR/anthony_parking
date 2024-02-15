@@ -14,7 +14,6 @@
 		"anthony_parking.iml": true,
 		"LICENSE": true,
 		"pubspec.lock": true,
-		"pubspec.yaml": true,
 		"README.md": true,
 		".idea": true,
 		".vscode": true,
@@ -23,7 +22,12 @@
 		"test": true,
 		"web": true,
 		"windows": true,
-		".dart_tool": true
+		".dart_tool": true,
+		"analysis_options.yaml": true,
+		"pubspec.yaml": true,
+		"assets": true,
+		"lib/components/header": true,
+		"lib/pages/home": true
 	},
 	"hide-files.files": [
 		".flutter-plugins",
@@ -33,7 +37,6 @@
 		"anthony_parking.iml",
 		"LICENSE",
 		"pubspec.lock",
-		"pubspec.yaml",
 		"README.md",
 		".idea",
 		".vscode",
@@ -42,6 +45,11 @@
 		"test",
 		"web",
 		"windows",
-		".dart_tool"
+		".dart_tool",
+		"analysis_options.yaml",
+		"pubspec.yaml",
+		"assets",
+		"lib/components/header",
+		"lib/pages/home"
 	]
 }

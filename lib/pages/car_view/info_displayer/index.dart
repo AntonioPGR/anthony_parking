@@ -1,5 +1,5 @@
 import 'package:anthony_parking/components/ImageLoader/index.dart';
-import 'package:anthony_parking/components/layouts/two_sides_layout.dart';
+import 'package:anthony_parking/layouts/two_sides_layout.dart';
 import 'package:anthony_parking/components/titles/page_title.dart';
 import 'package:anthony_parking/data/current_car/current_selected_car.dart';
 import 'package:anthony_parking/models/car_model.dart';
@@ -17,7 +17,7 @@ class InfoDisplayer extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     current_car_state = Provider.of<StateCurrentCar>(context);
-    current_car = current_car_state.getCurrentCar();
+    current_car = current_car_state.get();
     if(current_car == null){
       PageNavigator.goHome(context);
     }

@@ -13,7 +13,7 @@ class CarControllers{
   final TextEditingController current_time = TextEditingController();
   String photo_path = "";
 
-  CarModel create(){
+  CarModel createModel(){
     Uuid uuid_generator = const Uuid();
     return CarModel(
       plate: plate.text,
