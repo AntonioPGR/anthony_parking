@@ -5,11 +5,11 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 class FormContainer extends StatelessWidget{
   final GlobalKey<FormBuilderState> form_key;
   final List<Widget> inputs;
-  final double? gap_size;
+  final double gap_size;
   const FormContainer({
     required this.inputs,
     required this.form_key,
-    this.gap_size,
+    this.gap_size = 0,
     super.key
   });
 
@@ -18,7 +18,7 @@ class FormContainer extends StatelessWidget{
     return FormBuilder(
       key: form_key,
       child: CustomColumn(
-        gap_size: gap_size ?? 0,
+        gap_size: gap_size,
         children: inputs,
       ),
     );

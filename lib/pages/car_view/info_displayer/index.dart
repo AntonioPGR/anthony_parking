@@ -1,7 +1,5 @@
-import 'package:anthony_parking/components/ImageLoader/index.dart';
-import 'package:anthony_parking/layouts/two_sides_layout.dart';
-import 'package:anthony_parking/components/titles/page_title.dart';
 import 'package:anthony_parking/data/current_car/current_selected_car.dart';
+import 'package:anthony_parking/layouts/camera_Title_layout%20copy.dart';
 import 'package:anthony_parking/models/car_model.dart';
 import 'package:anthony_parking/pages/car_view/info_displayer/car_information/index.dart';
 import 'package:anthony_parking/pages/car_view/info_displayer/options.dart';
@@ -14,6 +12,10 @@ class InfoDisplayer extends StatelessWidget{
   late StateCurrentCar current_car_state;
   late CarModel? current_car;
 
+  String? getCarImage(){
+    return current_car?.photo;
+  }
+
   @override
   Widget build(BuildContext context) {
     current_car_state = Provider.of<StateCurrentCar>(context);
@@ -21,21 +23,14 @@ class InfoDisplayer extends StatelessWidget{
     if(current_car == null){
       PageNavigator.goHome(context);
     }
-    return TwoSidesLayout(
-      left_child: ImageLoader(
-        allow_image_change: false,
-        initial_image_path: current_car!.photo ?? "",
-      ),
-      right_child: Expanded(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            const PageTitle("Informações do veículo"),
-            CarInformation(current_car: current_car!),
-            ViewOptions()
-          ],
-        )
-      ),
+    return CameraTitleLayout(
+      allow_image_change: false,
+      initial_image_path: getCarImage(),
+      page_title: "Informações do veículo",
+      between_widgets: [
+        CarInformation(current_car: current_car!),
+        ViewOptions()
+      ],
     );
   }
 

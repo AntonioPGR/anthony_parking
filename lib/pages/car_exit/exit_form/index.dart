@@ -1,8 +1,5 @@
-import "package:anthony_parking/components/ImageLoader/index.dart";
-import 'package:anthony_parking/components/buttons/Button.dart';
-import 'package:anthony_parking/layouts/two_sides_layout.dart';
+import "package:anthony_parking/layouts/camera_Title_Button_layout.dart";
 import "package:anthony_parking/components/snackbar/snackbar.dart";
-import "package:anthony_parking/components/titles/page_title.dart";
 import "package:anthony_parking/controllers/car_controller.dart";
 import "package:anthony_parking/data/cars_list/cars_list.dart";
 import "package:anthony_parking/data/current_car/current_selected_car.dart";
@@ -33,9 +30,7 @@ class _ExitFormState extends State<ExitForm> {
   CarModel? current_car = null;
 
   void assignModelToControllers() {
-    !BaseValidator.isNull(current_car)
-        ? controllers.updateValues(current_car!)
-        : controllers.cleanExceptPlate();
+    !BaseValidator.isNull(current_car)? controllers.updateValues(current_car!) : controllers.cleanExceptPlate();
   }
 
   double getPrice() {
@@ -57,10 +52,14 @@ class _ExitFormState extends State<ExitForm> {
   onSubmit(BuildContext context) {
     if (!BaseValidator.isNull(current_car)) {
       cars_list_state.delete(current_car!.uuid);
+      PageNavigator.goHome(context);
       current_car_state.clear();
       messageSnackBar(context, "Carro removido com sucesso");
-      PageNavigator.goHome(context);
     }
+  }
+
+  String? getCurrentImage(){
+    return this.current_car?.photo;
   }
 
   @override
@@ -70,26 +69,20 @@ class _ExitFormState extends State<ExitForm> {
     current_car = current_car_state.get();
     assignModelToControllers();
 
-    return TwoSidesLayout(
-      left_child: ImageLoader(
-        allow_image_change: false,
-        initial_image_path: current_car?.photo ?? "",
-      ),
-      right_child: Expanded(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const PageTitle("Saída de veículos"),
-            PriceDisplayer(price: getPrice()),
-            ExitInputs(
-              controllers: controllers,
-              form_key: _form_key,
-              on_plate_change: onPlateChange,
-            ),
-            Button(label: "Confirmar saída", on_press: () => onSubmit(context))
-          ],
+    return CameraTitleButtonLayout(
+      allow_image_change: false,
+      initial_image_path: getCurrentImage(),
+      page_title: "Saída de Veículos",
+      between_widgets: [
+        PriceDisplayer(price: getPrice()),
+        ExitInputs(
+          controllers: controllers,
+          form_key: _form_key,
+          on_plate_change: onPlateChange,
         ),
-      ),
+      ], 
+      button_label: "Confirmar saída",
+      onSubmit: () => onSubmit(context),
     );
   }
 }

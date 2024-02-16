@@ -21,7 +21,7 @@ class CustomColumn extends StatelessWidget {
     return Column(
       mainAxisAlignment: main_alignment ?? MainAxisAlignment.center,
       crossAxisAlignment: cross_alignment ?? CrossAxisAlignment.center,
-      children: ListFunctions.insertBetweenElements(children, Gap(gap_size)),
+      children: WidgetsListFunctions.insertBetween(children, Gap(gap_size)),
     );
   }
 }

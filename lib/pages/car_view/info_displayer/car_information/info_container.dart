@@ -12,32 +12,30 @@ class InfoContainer extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
+    return Container(
       color: ThemeColors.beige,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              label,
-              style: const TextStyle(
-                fontSize: 16,
-                color: ThemeColors.black,
-                fontWeight: FontWeight.w600
-              ),
+      padding: const EdgeInsets.all(16.0),
+      child:  Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: const TextStyle(
+              fontSize: 16,
+              color: ThemeColors.black,
+              fontWeight: FontWeight.w600
             ),
-            Text(
-              text,
-              style: const TextStyle(
-                fontSize: 24,
-                color: ThemeColors.dark_brown,
-                fontWeight: FontWeight.w600
-              ),
+          ),
+          Text(
+            text,
+            style: const TextStyle(
+              fontSize: 24,
+              color: ThemeColors.dark_brown,
+              fontWeight: FontWeight.w600
             ),
-          ],
-        ),
-      )
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-class ListFunctions{
+class WidgetsListFunctions{
 
-  static insertBetweenElements(List<Widget> list, Widget insert_element){
+  static insertBetween(List<Widget> list, Widget insert_element){
     List<Widget> new_list = [];
     for (int i = 0; i < list.length; i++) {
       if (i != 0) {
@@ -12,5 +12,4 @@ class ListFunctions{
     }
     return new_list;
   }
-
 }

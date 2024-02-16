@@ -13,6 +13,7 @@ TextStyle createTextStyle({
 }
 
 class ThemeText {
+  static extraLarge({Color? color}) => createTextStyle(color: color, font_size: 56, bold: true,);
   static titleLarge({Color? color}) => createTextStyle(color: color, font_size: 38, bold: true,);
   static titleMedium({Color? color}) => createTextStyle(color: color, font_size: 32, bold: true);
   static titleSmall({Color? color}) => createTextStyle(color: color, font_size: 28, bold: true);

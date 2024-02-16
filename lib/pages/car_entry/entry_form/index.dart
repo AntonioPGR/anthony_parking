@@ -1,9 +1,7 @@
-import "package:anthony_parking/components/buttons/Button.dart";
 import "package:anthony_parking/components/snackbar/snackbar.dart";
-import "package:anthony_parking/components/titles/page_title.dart";
 import "package:anthony_parking/controllers/car_controller.dart";
 import "package:anthony_parking/data/cars_list/cars_list.dart";
-import "package:anthony_parking/layouts/camera_form_layout.dart";
+import "package:anthony_parking/layouts/camera_Title_Button_layout.dart";
 import "package:anthony_parking/models/car_model.dart";
 import "package:anthony_parking/pages/car_entry/entry_form/entry_inputs.dart";
 import "package:anthony_parking/tools/image_text_recognizer.dart";
@@ -54,20 +52,18 @@ class EntryForm extends StatelessWidget {
   Widget build(BuildContext context) {
     car_list_state = Provider.of<StateCarsList>(context);
 
-    return CameraFormLayout(
+    return CameraTitleButtonLayout(
       allow_image_change: true,
-      children: [
-        const PageTitle("Entrada de veículos"),
+      onImageChange: (file) => onImageChange(context, file),
+      page_title: "Entrada de Veículos",
+      between_widgets: [
         EntryInputs(
           form_key: form_key,
           controllers: controllers
         ),
-        Button(
-          width: MediaQuery.of(context).size.width * 0.4,
-          label: "Confirmar entrada", 
-          on_press: () => onSubmit(context)
-        )
-      ], 
+      ],
+      onSubmit: () => onSubmit(context),
+      button_label: "Confirmar Entrada",
     );
   }
 }

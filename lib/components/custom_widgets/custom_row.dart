@@ -3,23 +3,27 @@ import "package:flutter/cupertino.dart";
 import "package:gap/gap.dart";
 
 class CustomRow extends StatelessWidget {
-  List<Widget> children;
-  double gap_size;
-  final MainAxisAlignment? main_alignment;
-  final CrossAxisAlignment? cross_alignment;
+  final List<Widget> children;
+  final double gap_size;
+  final bool extended_child;
+  final MainAxisAlignment main_alignment;
+  final CrossAxisAlignment cross_alignment;
   
-  CustomRow({
+  const CustomRow({
     required this.children,
+    this.extended_child = false,
     this.gap_size = 0,
+    this.main_alignment = MainAxisAlignment.spaceBetween,
+    this.cross_alignment = CrossAxisAlignment.center,
     super.key,
-    this.main_alignment,
-    this.cross_alignment
   });
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: ListFunctions.insertBetweenElements(children, Gap(gap_size)),
+      mainAxisAlignment: main_alignment,
+      crossAxisAlignment: cross_alignment,
+      children: WidgetsListFunctions.insertBetween(children, Gap(gap_size)),
     );
   }
 }
