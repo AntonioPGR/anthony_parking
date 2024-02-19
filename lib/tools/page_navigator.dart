@@ -31,7 +31,7 @@ class PageNavigator{
   }
 
   static goConfigurations(BuildContext context) {
-    PageNavigator.goTo(context: context, page: ConfigsPage());
+    PageNavigator.goTo(context: context, page: const ConfigsPage());
   }
 
   static void goView(BuildContext context) {
@@ -39,7 +39,7 @@ class PageNavigator{
   }
 
   static goExit(BuildContext context) {
-    PageNavigator.goTo(context: context, page: CarExitPage());
+    PageNavigator.goTo(context: context, page: const CarExitPage());
   }
 
   static goUpdate(BuildContext context) {

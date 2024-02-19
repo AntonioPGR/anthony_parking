@@ -1,5 +1,4 @@
 import 'package:anthony_parking/assets/themes/theme_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DrawerItem extends StatefulWidget{
@@ -23,7 +22,7 @@ class _DrawerItemState extends State<DrawerItem>{
   @override
   Widget build(BuildContext context) {
     return ListTile(
-        contentPadding: EdgeInsets.all(8),
+        contentPadding: const EdgeInsets.all(8),
         leading: Icon(
           widget.icon,
           color: ThemeColors.off_white,

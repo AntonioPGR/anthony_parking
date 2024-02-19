@@ -1,5 +1,5 @@
 import 'package:anthony_parking/data/current_car/current_selected_car.dart';
-import 'package:anthony_parking/layouts/camera_Title_layout%20copy.dart';
+import 'package:anthony_parking/layouts/camera_title_layout.dart';
 import 'package:anthony_parking/models/car_model.dart';
 import 'package:anthony_parking/pages/car_view/info_displayer/car_information/index.dart';
 import 'package:anthony_parking/pages/car_view/info_displayer/options.dart';
@@ -29,7 +29,7 @@ class InfoDisplayer extends StatelessWidget{
       page_title: "Informações do veículo",
       between_widgets: [
         CarInformation(current_car: current_car!),
-        ViewOptions()
+        const ViewOptions()
       ],
     );
   }

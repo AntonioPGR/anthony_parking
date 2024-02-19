@@ -14,7 +14,7 @@ class _PageTitle extends State<PageTitle>{
   Widget build(BuildContext context){
     return Text(
       widget.title,
-      style: TextStyle(
+      style: const TextStyle(
           fontWeight: FontWeight.w600,
           fontSize: 40,
           color: ThemeColors.dark_brown

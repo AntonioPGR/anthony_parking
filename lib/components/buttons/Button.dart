@@ -32,7 +32,7 @@ class _ButtonState extends State<Button> {
         width: widget.width,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
           color: widget.bg_color ?? ThemeColors.dark_brown,
         ),
         child: Padding(

@@ -1,4 +1,3 @@
-import 'package:anthony_parking/components/buttons/Button.dart';
 import 'package:anthony_parking/components/titles/page_title.dart';
 import 'package:anthony_parking/layouts/camera_column_layout.dart';
 import 'package:camera/camera.dart';

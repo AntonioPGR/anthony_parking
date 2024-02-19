@@ -1,7 +1,6 @@
 import 'package:anthony_parking/assets/themes/theme_colors.dart';
 import 'package:anthony_parking/components/drawer/drawer_item.dart';
 import 'package:anthony_parking/tools/page_navigator.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NavDrawer extends StatelessWidget{

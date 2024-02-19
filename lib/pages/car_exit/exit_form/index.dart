@@ -1,4 +1,4 @@
-import "package:anthony_parking/layouts/camera_Title_Button_layout.dart";
+import 'package:anthony_parking/layouts/camera_title_button_layout.dart';
 import "package:anthony_parking/components/snackbar/snackbar.dart";
 import "package:anthony_parking/controllers/car_controller.dart";
 import "package:anthony_parking/data/cars_list/cars_list.dart";
@@ -27,7 +27,7 @@ class _ExitFormState extends State<ExitForm> {
   final PriceCalculator price_calculator = PriceCalculator();
   late StateCarsList cars_list_state;
   late StateCurrentCar current_car_state;
-  CarModel? current_car = null;
+  CarModel? current_car;
 
   void assignModelToControllers() {
     !BaseValidator.isNull(current_car)? controllers.updateValues(current_car!) : controllers.cleanExceptPlate();
@@ -59,7 +59,7 @@ class _ExitFormState extends State<ExitForm> {
   }
 
   String? getCurrentImage(){
-    return this.current_car?.photo;
+    return current_car?.photo;
   }
 
   @override

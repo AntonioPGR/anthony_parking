@@ -3,6 +3,8 @@ import "package:anthony_parking/pages/configs/config_field.dart";
 import "package:flutter/material.dart";
 
 class ConfigsColumn extends StatelessWidget{
+  const ConfigsColumn({super.key});
+
 
   @override
   Widget build(BuildContext context) {

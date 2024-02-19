@@ -8,7 +8,13 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 class UpdateInputs extends StatelessWidget {
   final CarControllers controllers;
   final GlobalKey<FormBuilderState> form_key;
-  UpdateInputs({required this.form_key, required this.controllers, super.key});
+
+  const UpdateInputs({
+    required this.form_key, 
+    required this.controllers, 
+    super.key
+  });
+
   @override
   Widget build(BuildContext context) {
     return FormContainer(

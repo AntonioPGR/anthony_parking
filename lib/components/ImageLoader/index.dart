@@ -40,6 +40,14 @@ class _ImageLoaderState extends State<ImageLoader> {
     setState(() {});
   }
 
+  void setInitialImage(){
+    String? initial_path = widget.initial_image_path;
+    if (initial_path != null && image == null && initial_path.length > 1 ) {
+      File(initial_path).exists().then((value) => image = XFile(initial_path));
+      setState(() {});
+    }
+  }
+
   void pickFromCamera() async {
     XFile? new_image = await photo_picker.pickFromCamera();
     setImage(new_image);
@@ -51,26 +59,9 @@ class _ImageLoaderState extends State<ImageLoader> {
   }
 
   void clean() async {
-    XFile? new_image = null;
+    XFile? new_image;
     setImage(new_image);
   } 
-
-  @override
-  Widget build(BuildContext context) {
-    String? initial_path = widget.initial_image_path;
-    if (initial_path != null && image == null) {
-      image = XFile(initial_path);
-    }
-
-    return SizedBox(
-      height: MediaQuery.of(context).size.height,
-      width: 350,
-      child: CustomColumn(
-        gap_size: 16,
-        children: renderComponents(),
-      ),
-    );
-  }
 
   List<Widget> renderComponents() {
     List<Widget> widgets = [
@@ -108,4 +99,19 @@ class _ImageLoaderState extends State<ImageLoader> {
     }
     return widgets;
   }
+
+  @override
+  Widget build(BuildContext context) {
+    setInitialImage();
+
+    return SizedBox(
+      height: MediaQuery.of(context).size.height,
+      width: 350,
+      child: CustomColumn(
+        gap_size: 16,
+        children: renderComponents(),
+      ),
+    );
+  }
+
 }

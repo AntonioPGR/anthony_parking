@@ -3,9 +3,11 @@ import 'package:anthony_parking/pages/configs/configs_column.dart';
 import "package:flutter/material.dart";
 
 class ConfigsPage extends StatelessWidget {
+  const ConfigsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return BaseLayout(
+    return const BaseLayout(
       child: Center(
         child: ConfigsColumn(),
       ) 

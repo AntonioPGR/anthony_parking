@@ -4,6 +4,8 @@ import 'package:anthony_parking/tools/page_navigator.dart';
 import 'package:flutter/cupertino.dart';
 
 class ViewOptions extends StatelessWidget{
+  const ViewOptions({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Row(
