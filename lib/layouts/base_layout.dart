@@ -15,7 +15,7 @@ class BaseLayout extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: const Header(),
+      appBar:  const Header(),
       drawer: const NavDrawer(),
       body: Container(
         padding: const EdgeInsets.all(16),

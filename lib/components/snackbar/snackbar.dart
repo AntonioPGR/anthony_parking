@@ -13,7 +13,7 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> messageSnackBar(BuildC
         ),
       ),
       duration: const Duration(milliseconds: 2000),
-      backgroundColor: ThemeColors.dark_brown,
+      backgroundColor: ThemeColors.brown,
       margin: const EdgeInsets.all(16),
       behavior: SnackBarBehavior.floating,
       padding: const EdgeInsets.all(16),

@@ -42,9 +42,12 @@ class _ImageLoaderState extends State<ImageLoader> {
 
   void setInitialImage(){
     String? initial_path = widget.initial_image_path;
-    if (initial_path != null && image == null && initial_path.length > 1 ) {
-      File(initial_path).exists().then((value) => image = XFile(initial_path));
-      setState(() {});
+    if (initial_path != null && initial_path.isNotEmpty ) {
+      File(initial_path).exists()
+        .then((value){
+          image = XFile(initial_path);
+          setState((){});
+        });
     }
   }
 

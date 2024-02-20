@@ -38,8 +38,8 @@ class EntryForm extends StatelessWidget {
     if (image != null) {
       try {
         controllers.photo_path = image.path;
-        String? recognized_text = await text_recognizer.RecognizeTextFrom(image);
-        String new_plate = PlateValidator.tryToFormat(recognized_text ?? "");
+        String recognized_text = await text_recognizer.RecognizeTextFrom(image) ?? "";
+        String new_plate = PlateValidator.tryToFormat(PlateValidator.cleanPlate(recognized_text));
         controllers.plate.text = new_plate;
       } catch (e) {
         // ignore: use_build_context_synchronously

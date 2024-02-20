@@ -7,7 +7,7 @@ class ConfigsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const BaseLayout(
+    return BaseLayout(
       child: Center(
         child: ConfigsColumn(),
       ) 
