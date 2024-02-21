@@ -17,14 +17,11 @@
 		"README.md": true,
 		".idea": true,
 		".vscode": true,
-		"android": true,
-		"build": true,
 		"test": true,
 		"web": true,
 		"windows": true,
 		".dart_tool": true,
-		"analysis_options.yaml": true,
-		"assets": true
+		"analysis_options.yaml": true
 	},
 	"hide-files.files": [
 		".flutter-plugins",
@@ -37,13 +34,10 @@
 		"README.md",
 		".idea",
 		".vscode",
-		"android",
-		"build",
 		"test",
 		"web",
 		"windows",
 		".dart_tool",
-		"analysis_options.yaml",
-		"assets"
+		"analysis_options.yaml"
 	]
 }
